@@ -1,7 +1,3 @@
-/**
- *Submitted for verification at BscScan.com on 2022-02-25
-*/
-
 pragma solidity 0.5.16;
 
 interface IBEP20 {
@@ -115,7 +111,7 @@ contract Context {
   }
 
   function _msgData() internal view returns (bytes memory) {
-    this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691
+    this;
     return msg.data;
   }
 }
@@ -352,10 +348,10 @@ contract BEP20Token is Context, IBEP20, Ownable {
   string private _symbol;
   string private _name;
   constructor() public {
-        _name = "AladdinSmallWishes";
-        _symbol = "ASW";
-        _totalSupply = 30000000000000000000000000;
-        _decimals = 12;
+        _name = "";
+        _symbol = "";
+        _totalSupply = supply;
+        _decimals = decimal;
         _balances[msg.sender] = _totalSupply;
 
         emit Transfer(address(0), msg.sender, _totalSupply);
